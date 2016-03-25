@@ -15,7 +15,7 @@ StartDrawing(ImageOutput(Image))
 StopDrawing()
 
 ;Process : Inverse (0 à 255)
-RawImageGenerateNormalMapping(*RawImage, 20)
+RawImageGenerateNormalMapping(*RawImage, 10)
 
 ;Copie du résultat du process dans l'image d'origine  
 StartDrawing(ImageOutput(Image))
@@ -29,6 +29,6 @@ ImageGadget(1, 0,0, ImageWidth(Image), ImageHeight(Image), ImageID(Image))
 Repeat : Until WaitWindowEvent(10) = #PB_Event_CloseWindow
 
 ; IDE Options = PureBasic 5.42 LTS (Windows - x86)
-; CursorPosition = 2
+; CursorPosition = 17
 ; EnableUnicode
 ; EnableXP
