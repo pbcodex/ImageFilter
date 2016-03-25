@@ -23,12 +23,13 @@ CopyMemory(GetRawImagePixelsPtr(*RawImage), DrawingBuffer(), ImageWidth(Image) *
 StopDrawing()
 
 ;Affichage du résultat
-OpenWindow(1, 0, 0, ImageWidth(Image), ImageHeight(Image), "Luminisity", #PB_Window_SystemMenu | #PB_Window_ScreenCentered)
+OpenWindow(1, 0, 0, ImageWidth(Image), ImageHeight(Image), "Luminosity", #PB_Window_SystemMenu | #PB_Window_ScreenCentered)
 ImageGadget(1, 0,0, ImageWidth(Image), ImageHeight(Image), ImageID(Image))
 
 Repeat : Until WaitWindowEvent(10) = #PB_Event_CloseWindow
 
 ; IDE Options = PureBasic 5.42 LTS (Windows - x86)
-; CursorPosition = 8
+; CursorPosition = 25
+; FirstLine = 3
 ; EnableUnicode
 ; EnableXP
