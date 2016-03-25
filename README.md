@@ -1,5 +1,5 @@
 # ImageFilter
-Une DLL et un include pour le langage PureBasic pour le traitement d'images crée par G-Rom.
+Crée par G-Rom, ImageFilter se présente sous la forme d'une DLL (ImageFilter.dll) et un include (ImageFilter.pbi) pour le traitement d'images avec le langage PureBasic. 
 
 - GreyScale
 - Luminosity
@@ -16,5 +16,8 @@ Une DLL et un include pour le langage PureBasic pour le traitement d'images cré
 - Filtre Gaussian
 
 
+![](ScreenShoot.png)
+
 # Lien
 http://lodev.org/cgtutor/filtering.html
+
