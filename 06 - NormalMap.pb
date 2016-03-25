@@ -1,9 +1,9 @@
 XIncludeFile "ImageFilter.pbi"
 
-UsePNGImageDecoder()
+UseJPEGImageDecoder()
 
 ;Image originale en couleur
-Image = LoadImage(#PB_Any,"lena_color.png")
+Image = LoadImage(#PB_Any,"floorheights.jpg")
 
 ;AFfichage de l'image originale
 OpenWindow(0, 100, 100, ImageWidth(Image), ImageHeight(Image), "Original", #PB_Window_SystemMenu)
@@ -29,6 +29,6 @@ ImageGadget(1, 0,0, ImageWidth(Image), ImageHeight(Image), ImageID(Image))
 Repeat : Until WaitWindowEvent(10) = #PB_Event_CloseWindow
 
 ; IDE Options = PureBasic 5.42 LTS (Windows - x86)
-; CursorPosition = 25
+; CursorPosition = 2
 ; EnableUnicode
 ; EnableXP
