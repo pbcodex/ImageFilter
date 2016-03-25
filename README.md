@@ -14,3 +14,7 @@ Une DLL et un include pour le langage PureBasic pour le traitement d'images cré
 - Filtre Find Edges 
 - Filtre Blur
 - Filtre Gaussian
+
+
+# Lien
+http://lodev.org/cgtutor/filtering.html
