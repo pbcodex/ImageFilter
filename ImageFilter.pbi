@@ -24,19 +24,20 @@ Macro IMPORT_STATIC_FUNCTION(NAME, RETURN_VALUE , PARAMETERS)
 EndMacro
 
 Select OSVersion()
-    Case #PB_OS_Windows_XP, #PB_OS_Windows_7, #PB_OS_Windows_8, #PB_OS_Windows_10
-      CompilerIf #PB_Compiler_Processor = #PB_Processor_x86
-        OpenLibrary(#LIBRARY,"ImageFilter_X86.dll")
-      CompilerElse
-        OpenLibrary(#LIBRARY,"ImageFilter_X64.dll")
-      CompilerEndIf
-      
-      Case #PB_OS_Linux_2_2, #PB_OS_Linux_2_4, #PB_OS_Linux_2_6
-        CompilerIf #PB_Compiler_Processor = #PB_Processor_x86
-          OpenLibrary(#LIBRARY,"Linux_x86\/ImageFilter_X86.dll")
-        CompilerElse
-          OpenLibrary(#LIBRARY,"Linux_x64\/ImageFilter_X64.dll")
-        CompilerEndIf
+  Case #PB_OS_Windows_XP, #PB_OS_Windows_7, #PB_OS_Windows_8, #PB_OS_Windows_10
+    CompilerIf #PB_Compiler_Processor = #PB_Processor_x86
+      OpenLibrary(#LIBRARY,"ImageFilter_X86.dll")
+    CompilerElse
+      OpenLibrary(#LIBRARY,"ImageFilter_X64.dll")
+    CompilerEndIf
+    
+  Case #PB_OS_Linux_2_2, #PB_OS_Linux_2_4, #PB_OS_Linux_2_6
+    
+    CompilerIf #PB_Compiler_Processor = #PB_Processor_x86
+      OpenLibrary(#LIBRARY,"Linux_x86\ImageFilter.so")
+    CompilerElse
+      OpenLibrary(#LIBRARY,"Linux_x64\ImageFilter.so")
+    CompilerEndIf
 EndSelect
 
 ; Creation d'une image brute selon une taille ( width & height ) 
@@ -120,10 +121,9 @@ EndEnumeration
 
 
 
-
-; IDE Options = PureBasic 5.42 LTS (Windows - x64)
-; CursorPosition = 37
-; FirstLine = 20
+; IDE Options = PureBasic 5.40 LTS (Linux - x64)
+; CursorPosition = 38
+; FirstLine = 14
 ; Folding = --
 ; EnableUnicode
 ; EnableXP
