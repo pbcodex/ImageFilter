@@ -23,8 +23,21 @@ Macro IMPORT_STATIC_FUNCTION(NAME, RETURN_VALUE , PARAMETERS)
   NAME#RETURN_VALUE#(PARAMETERS)
 EndMacro
 
-
-OpenLibrary(#LIBRARY,"ImageFilter.dll")
+Select OSVersion()
+    Case #PB_OS_Windows_XP, #PB_OS_Windows_7, #PB_OS_Windows_8, #PB_OS_Windows_10
+      CompilerIf #PB_Compiler_Processor = #PB_Processor_x86
+        OpenLibrary(#LIBRARY,"ImageFilter_X86.dll")
+      CompilerElse
+        OpenLibrary(#LIBRARY,"ImageFilter_X64.dll")
+      CompilerEndIf
+      
+      Case #PB_OS_Linux_2_2, #PB_OS_Linux_2_4, #PB_OS_Linux_2_6
+        CompilerIf #PB_Compiler_Processor = #PB_Processor_x86
+          
+        CompilerElse
+          
+        CompilerEndIf
+EndSelect
 
 ; Creation d'une image brute selon une taille ( width & height ) 
 ; un tableau de pixel ou chaque composante a une valeur entre 0-255
@@ -108,8 +121,9 @@ EndEnumeration
 
 
 
-; IDE Options = PureBasic 5.42 LTS (Windows - x86)
-; CursorPosition = 85
-; Folding = -
+; IDE Options = PureBasic 5.42 LTS (Windows - x64)
+; CursorPosition = 28
+; FirstLine = 8
+; Folding = --
 ; EnableUnicode
 ; EnableXP
