@@ -31,12 +31,11 @@ Select OSVersion()
       OpenLibrary(#LIBRARY,"ImageFilter_X64.dll")
     CompilerEndIf
     
-  Case #PB_OS_Linux_2_2, #PB_OS_Linux_2_4, #PB_OS_Linux_2_6
-    
+  Case #PB_OS_Linux_2_2, #PB_OS_Linux_2_4, #PB_OS_Linux_2_6, #PB_OS_Linux_Future
     CompilerIf #PB_Compiler_Processor = #PB_Processor_x86
-      OpenLibrary(#LIBRARY,"Linux_x86\ImageFilter.so")
+      OpenLibrary(#LIBRARY,"Linux_x86/ImageFilter.so")
     CompilerElse
-      OpenLibrary(#LIBRARY,"Linux_x64\ImageFilter.so")
+      OpenLibrary(#LIBRARY,"Linux_x64/ImageFilter.so")
     CompilerEndIf
 EndSelect
 
@@ -122,7 +121,7 @@ EndEnumeration
 
 
 ; IDE Options = PureBasic 5.40 LTS (Linux - x64)
-; CursorPosition = 38
+; CursorPosition = 33
 ; FirstLine = 14
 ; Folding = --
 ; EnableUnicode
